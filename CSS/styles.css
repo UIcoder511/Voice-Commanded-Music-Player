@@ -1,0 +1,78 @@
+
+
+
+#spinner {
+  display: none;
+  position: fixed;
+  z-index: 111;
+  left: 50%;
+  top: 80%;
+}
+
+.glyphicon-headphones {
+  color: crimson;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+.big {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.context{
+  margin-bottom: 10px;
+}
+
+
+.col-md-6{
+    text-align: center;
+    float: none;
+    margin: auto;
+}
+
+col-md-12{
+    text-align: center;
+}
+
+.list-group-item{
+    
+    
+    padding: 20px 0px!important;
+    
+    opacity: 0.8 !important;
+   
+    background-color: transparent !important;
+   margin: 10px 0px !important;
+    transition: 0.4s all !important;
+}
+
+.list-group-item-success{
+    background-color: transparent !important;
+    opacity: 1 !important;
+    color:white !important;
+    box-shadow: 0px 0px 10px 3px white !important;
+}
+.glyphicon-headphones{
+     
+     top:12px !important;
+}
+
+
+
+
+@media (min-width: 992px)
+{
+    .col-md-6 {
+    float: none;
+        margin: auto;
+}
+}
+
+
+img.aldpimg {
+  width: 99px;
+  height: 99px;
+  float: left;
+  margin-top: -42px;
+}

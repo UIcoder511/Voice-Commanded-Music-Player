@@ -1,0 +1,1210 @@
+<html>
+
+    <head>
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        
+        <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+        
+        <script src="JS/id3-minimized.js" type="text/javascript"></script>
+
+        <style>
+            *{box-sizing: border-box}
+body {font-family: oswald;margin: 0px;padding: 0px;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  box-shadow: 0px 0px 10px 1px #dddddd;
+  background-color: #f1f1f1;
+  width: 20%;
+  height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: white;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+            
+            div,button{
+                font-family: oswald;
+            }
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #eeeeee;
+}
+
+/* Style the tab content */
+.tabcontent {
+    
+    margin-top: 50px;
+   
+  float: left;
+  padding: 0px 12px;
+  
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+             .resNAME{
+                float: left;
+                 font-size: 20px;
+                margin-left: 200px;
+                margin-top: -15px;
+            }
+            
+            .resLOGO{
+                float: left;
+                margin-top: -50px;
+                    margin-left: -50px;
+            }
+            
+            
+            
+            .bt{
+                margin-top: -66px;
+                margin-right: -30px;
+                float: right;
+                border: none;
+                background: white;
+                font-family: oswald;
+                font-size: 20px;
+                clear: both;
+                border: 1px solid ;
+                border-radius: 4px;
+
+            }  
+            
+            .bt:hover{
+                 color: gray;
+            }
+            
+            .single{
+                display:block;
+                margin: 10px;
+                padding: 60px;
+                box-shadow: 0px 0px 10px 1px gray;
+            }
+            
+            #Paris{
+                display: none;
+            }
+            
+               .or{
+                box-shadow: 0px 0px 10px 1px gray;
+                padding: 10px;
+                margin: 10px;
+            }
+            
+           
+            .selectclass{
+                width: 200px;
+                margin: 10px;
+                font-family: oswald;
+            }
+    
+            
+            #Tokyo{
+                display: none;
+            }
+            
+           
+            .btnn{
+                border-radius: 100px;
+                border: solid 1px #dd2600;
+                padding: 1px 6px;
+                cursor: pointer;
+                font-size: 14px;
+                transition: all 0.3s;
+                color: white;
+                background-color: #dd2600;
+            }
+            
+            .btnn:hover{
+                opacity: 0.6;
+            }
+
+            div p{
+            	font-family: Oswald;
+            	
+
+            }
+            
+            .right{
+                
+            	margin-left:160px;
+            }
+            
+            .both{
+            	box-shadow: 0px 0px 7px 1px #cccccc;
+            }
+
+            .both2{
+            	padding: 2px;
+		margin:10px;
+            	box-shadow: 0px 0px 7px 1px #cccccc;
+            }
+
+            .left{
+            	float: left;
+            }
+
+            .left img{
+            	width: 144px;
+            	height: 144px;
+            }
+            
+</style>
+    
+    </head>
+
+    <body>
+     <div class="main-nav" style="box-shadow: 0px 0px 10px 2px #dddddd;">
+          
+        <div id="logo"><a id="aa"><img src="Images/Musiclogo.png" width="60px" style="margin: 7px;margin-left: 30px;" ></a></div>
+            
+        
+        <div id="RR" style="float: right; margin-top: -50px;font-family: oswald;color:#dd2600;font-size: 23px;margin-right: 40px;">ADMIN</div>
+       
+        </div>
+        
+        
+<div class="tab" style="margin-top: 20px;">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Users</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Add Songs</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Songs</button>
+  <button class="tablinks" onclick="openCity(event, 'Tok')">Song Requests</button>
+  <button class="tablinks" onclick="openCity(event, 'To')">Add from Dezzer</button>
+</div>
+
+<div id="London" class="tabcontent" >
+    <div id="Users">
+
+    </div>
+  
+</div>
+        
+
+<div id="Paris" class="tabcontent" style="margin-top: 10px;">
+    
+    <div >
+            <p style="font-size: 25px;padding: 10px;color: #dd2600;">Add Latest Songs</p>
+        
+            <div id="addS" style="margin-left: 30px;margin-top: -10px;">
+        
+                <div>
+                    <label for="fil" class="btnn" style="background-color: white;color:black;border:black 1px solid;">Select</label>
+                    <input type="file" id="fil" onchange="loadFile(this)" style="visibility: hidden;" >
+                    <p><b>Title:</b> <span id="title"></span></p>
+                    <p><b>Artist:</b> <span id="artist"></span></p>
+                    <p><b>Album:</b> <span id="album"></span></p>
+                    <img id="picture" src="" alt= "Album Photo" style="width: 200px;" />
+                    <br><br>
+                    <audio id="sss" src=""></audio>
+                    <button onclick="add()" class="btnn" style="padding: 1px 14px;">Add</button>
+                </div>
+            </div>
+        
+        
+    </div>
+    
+    
+  
+</div>
+        
+        <script>
+            
+     /***********************************************ID3*********************************************/       
+            
+    /**
+     * Loading the tags using the FileAPI.
+     */
+    var tagsend,timee,DPURL,IURL,im,filee;  
+            
+            
+            
+    function loadFile(input) {
+      var file = input.files[0],
+      url = file.urn || file.name;
+        filee=file;
+      var sss=document.getElementById("sss");
+        sss.setAttribute("src",url);
+       // $("#sss").attr
+     //   console.log(URL.createObjectURL(file));
+     //   console.log(sss.duration);
+        
+        $("#sss").on("canplaythrough", function(e){
+    var seconds = e.currentTarget.duration;
+    var duration = moment.duration(seconds, "seconds");
+    
+    var time = "";
+    var hours = duration.hours();
+    if (hours > 0) { time = hours + ":" ; }
+    
+    time = time + duration.minutes() + ":" + duration.seconds();
+    timee=time;
+    console.log(time);
+});
+        
+        
+      ID3.loadTags(url, function() {
+      //  urlsend=url;
+        showTags(url);
+      }, {
+        tags: ["title","artist","album","picture"],
+        dataReader: ID3.FileAPIReader(file)
+      });
+    }
+
+    /**
+     * Generic function to get the tags after they have been loaded.
+     */
+    function showTags(url) {
+      var tags = ID3.getAllTags(url);
+      console.log(tags);
+     tagsend=tags;
+      document.getElementById('title').textContent = tags.title || "";
+      document.getElementById('artist').textContent = tags.artist || "";
+      document.getElementById('album').textContent = tags.album || "";
+      var image = tags.picture;
+      if (image) {
+        var base64String = "";
+        for (var i = 0; i < image.data.length; i++) {
+            base64String += String.fromCharCode(image.data[i]);
+        }
+          console.log(base64String);
+         // im=base64String;
+          im=window.btoa(base64String);
+        var base64 = "data:" + image.format + ";base64," +
+                window.btoa(base64String);
+       //   im=base64;
+        document.getElementById('picture').setAttribute('src',base64);
+      } else {
+        document.getElementById('picture').style.display = "none";
+      }
+        
+      //  DP();
+
+        fileup();
+        
+        
+        
+    }
+            
+    function add(){
+      //  var tags = tagsend;
+        const reff=firebase.database().ref("Songs");
+        
+        reff.push({
+            name:tagsend.title,
+            duration:timee,
+            file:DPURL,
+            artist:tagsend.artist,
+            album:tagsend.album,
+            image:IURL,
+           
+        }).then((snapshot)=>{
+          reff.child(snapshot.key).update({"key": snapshot.key})
+        })
+        
+    }        
+            var fileUpload=document.getElementById('fil');
+            
+   
+    
+    
+  function fileup() 
+                              {
+       //console.log('File ');
+      let storageRef = firebase.storage().ref('new');
+      let firstFile = filee; // upload the first file only
+     
+    
+    let uploadTask = storageRef.child(firstFile.name).put(firstFile)
+      .then(snapshot => {
+       snapshot.ref.getDownloadURL().then(function(downloadURL) 
+    {
+            console.log('File available at', downloadURL);
+            DPURL=downloadURL;
+          //console.log(DPURL); 
+        
+
+            //add();
+
+
+  });  // Will return a promise with the download link
+   })
+     // console.log(im);
+    
+    
+       let uploadTask2 = storageRef.child(firstFile.name.split('.').slice(0, -1).join('.')).putString(im, 'base64', {contentType:'image/jpg'})
+      .then(snapshot => {
+       snapshot.ref.getDownloadURL().then(function(downloadURL) 
+    {
+            console.log('File available at', downloadURL);
+            IURL=downloadURL;
+          //console.log(DPURL); 
+            //add();
+  });  // Will return a promise with the download link
+   })
+      
+      
+      
+     
+      }
+            
+            
+            
+            
+            
+          /***********************************************ID3*********************************************/  
+            
+            
+        
+        </script>
+        
+        
+        
+        <div id="Tokyo" class="tabcontent" style="margin-top: 45px;">
+    
+    <div >
+            <p style="font-size: 25px;padding: 10px;color: #dd2600;">Songs</p>
+        
+            <div id="Songs2" style="margin-left: 30px;margin-top: -10px;">
+        
+            </div>
+        
+        
+    </div>
+    
+    
+  
+</div>
+
+
+
+
+<div id="Tok" class="tabcontent" style="margin-top: 45px;">
+    
+  <div >
+          <!-- <p style="font-size: 25px;padding: 10px;color: #dd2600;">Songs</p> -->
+      
+          <div id="SongsREQ" style="margin-left: 30px;margin-top: -10px;">
+      
+          </div>
+      
+      
+  </div>
+  
+</div>
+
+
+<div id="To" class="tabcontent" style="margin-top: 45px;">
+    
+  <div >
+          <!-- <p style="font-size: 25px;padding: 10px;color: #dd2600;">Songs</p> -->
+      
+          <div id="SongsDz" style="margin-left: 30px;margin-top: -10px;">
+            <div class="example">
+              <form class="searchbox-container" >
+                  <input type="search"  autocomplete="off" id="ser" />
+                  <button type="button"  onclick="serDz()">Show Deezer</button>
+                  <button type="button"  onclick="addDz()">Add</button>
+              </form>
+            </div>
+
+            <div id="consDz">
+
+            </div>
+      
+          </div>
+      
+      
+  </div>
+  
+</div>
+
+
+<script>
+
+  var jsonDz;
+
+  function serDz(){
+
+
+    var seDz=document.getElementById("ser");
+
+
+    console.log("sd")
+
+    var data = null;
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            
+            var cons=document.getElementById("consDz");
+            cons.innerHTML="";
+
+            jsonDz=JSON.parse(this.responseText)
+            console.log(jsonDz);
+
+            cons.innerHTML=JSON.stringify(jsonDz)
+
+          }
+        });
+
+xhr.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q="+seDz.value);
+xhr.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
+xhr.setRequestHeader("x-rapidapi-key", "0ad3e5457amsh6fcdb1bb4814446p198f38jsn77d991b58089");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "b400e276-3375-42b3-ae48-dd7c7095060c");
+
+xhr.send(data);
+
+  }
+
+
+  function addDz(){
+    
+                var data2=jsonDz
+               // var ne=[];
+
+            const reff=firebase.database().ref("Songs");
+
+            for(var i = 0; i < 25; i++)
+                {
+                    // var keyy=makeid(20)
+                    // console.log(data2.data[i])
+                    // ne.push({
+
+                    //         key:keyy,
+                    //         file:data2.data[i].preview,
+                    //         image:data2.data[i].album.cover_big,
+                    //         album:data2.data[i].album.title,
+                    //         artist:data2.data[i].artist.name,
+                    //         duration:data2.data[i].duration
+
+                    //         })
+                    // var d= data2.data[i];
+
+                    reff.push({
+                        name:data2.data[i].title,
+                        duration:data2.data[i].duration,
+                        file:data2.data[i].preview,
+                        artist:data2.data[i].artist.name,
+                        album:data2.data[i].album.title,
+                        image:data2.data[i].album.cover_big
+
+                      }).then((snapshot)=>{
+                      reff.child(snapshot.key).update({"key": snapshot.key})
+                      })
+
+
+                    
+                }
+
+
+
+  }
+
+</script>
+
+        
+        
+    
+    
+       
+        <!------------------Firebase------------------------------------------------------------------>
+
+		
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-storage.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDGPqjXxUGaoUyS1smPMpIRJjQg-BT6Xyg",
+    authDomain: "voicemusic-8f29b.firebaseapp.com",
+    databaseURL: "https://voicemusic-8f29b.firebaseio.com",
+    projectId: "voicemusic-8f29b",
+    storageBucket: "voicemusic-8f29b.appspot.com",
+    messagingSenderId: "192410163862",
+    appId: "1:192410163862:web:3e15fdbe5c9a7623"
+  };
+  firebase.initializeApp(config);
+</script>
+        
+        <script>
+function openCity(evt, cityName) 
+            {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+    if(cityName==("London"))
+        fun();
+             //  if(cityName==("Paris"))
+                   //fun2();
+                
+                if(cityName==("Tokyo"))
+                   fun3();
+    // const database = firebase.database();
+    if(cityName=="Tok")
+            funRE();
+               
+    //const ref = database.ref('Users/Restaurants');
+            }
+            
+
+            function fun(){
+
+
+
+
+                
+                 let Users=document.getElementById('Users');
+                
+            
+               var refItems = firebase.database().ref("Users/Customers");
+
+
+               refItems.on("value",function(snapshot1)
+               		{
+               			  console.log(snapshot1.val());
+                          console.log("Users:"+ snapshot1.exists());
+							Users.innerHTML="";
+
+                          snapshot1.forEach(function(childSnapshot1)
+
+
+                          	{
+
+
+
+                          		  console.log(childSnapshot1.val());
+                                 
+                      
+        
+                                          console.log(childSnapshot1.key);
+                                     
+                                          var  email=childSnapshot1.val().EmailID;
+                                          var  name=childSnapshot1.val().Name;
+                                      
+                                          var div=document.createElement('div');
+                                          div.setAttribute('class','both2');
+                                         var Nname=document.createElement('p');
+                                         var Nemail=document.createElement('p');
+                                         //var Nfile=document.createElement('p');
+                                        
+                                         
+                                            //console.log("addd"+addressData);
+                                       /*   var br=document.createElement('br');
+                                          var brr=document.createElement('br');
+                                         var br1=document.createElement('br');
+                                         var br2=document.createElement('br');
+                                         var br3=document.createElement('br');
+                                         var br4=document.createElement('br');
+                                         var br5=document.createElement('br');*/
+                                        
+                                           
+                                            Nname.innerHTML="Name :"+name;
+                                            Nemail.innerHTML="Email :"+email;
+                                        
+                                         
+                                   		div.appendChild(Nname);
+                                   		div.appendChild(Nemail);
+
+                                        
+                                         
+                    
+                                         Users.appendChild(div);
+
+
+
+
+
+                          	});
+               		}
+
+               	);
+
+
+              
+                
+
+            }
+            
+    /*
+            function fun()
+            {
+                
+            
+    
+     var ref = firebase.database().ref("Users/Restaurants");
+
+                            ref.once("value", function(snapshot){
+                                // Contains all data from Firebase
+                               // var data = snapshot.val();
+                               // var dates = Object.keys(snapshot);
+                                 //   console.log("dates : "+ dates);
+                              //  console.log(snapshot.val());
+                             //    var j=0;
+                                  var resREQ=document.getElementById('London');
+                                
+                                    resREQ.innerHTML="";  
+                                    var count=0;
+                                    
+                                snapshot.forEach(function(childSnapshot)
+                                 {
+                                    
+                                   
+                                     //console.log(childSnapshot.val().Name);
+                                    
+                                  if((childSnapshot.val().Verified)==("false"))
+                                      {
+                                    var single=document.createElement('div');
+                                    single.setAttribute('class','single');
+                                    var img=document.createElement('img');
+                                    img.setAttribute('class','resLOGO');
+                                    img.setAttribute('src',childSnapshot.val().DP);
+                                    img.style.width="100px";
+                                    img.style.height="100px";
+                                    
+                                    var name=document.createElement('p');
+                                    name.setAttribute('class','resNAME');
+                                    name.innerHTML=childSnapshot.val().Name;
+                                    var button=document.createElement('input');
+                                   // button.setAttribute('onclick',req);
+                                    button.setAttribute('type','button');
+                                    button.setAttribute('value','Accept');
+                                    button.setAttribute('class','bt');
+                                    button.setAttribute('resname',childSnapshot.val().Name);
+                                    button.addEventListener("click", req);
+                                    
+                                    resREQ.appendChild(single);
+                                    single.appendChild(img);
+                                    single.appendChild(name);
+                                    single.appendChild(button);
+                                          count++;
+                                      }
+                                  
+                                   
+                                    
+                                    
+                                    
+                                });
+                                
+                                  
+                                    if(count==0)
+                                        {
+                                             var single=document.createElement('div');
+                                    single.setAttribute('class','single');
+                                    ;
+                                    
+                                    var name=document.createElement('p');
+                                    name.setAttribute('class','resNAME');
+                                    name.innerHTML="No Users"
+                                    var button=document.createElement('input');
+                                   // button.setAttribute('onclick',req);
+                                   
+                                    
+                                    resREQ.appendChild(single);
+                                  //  single.appendChild(img);
+                                    single.appendChild(name);
+                                //    single.appendChild(button);
+                                        }
+                                
+                            });
+                
+            }
+            
+            
+            function fun2()
+            {
+                console.log("Here");
+                
+                
+               
+                console.log('hii');
+                var addS=document.getElementById('addS');
+                
+                 //  var refItems = firebase.database().ref("Users/Customers/"+localStorage.getItem('userid')+"/Orders");
+               var refItems = firebase.database().ref("Songs");
+                 refItems.on("value", function(snapshot1)
+                        {
+                                          //   console.log(snapshot.val().);
+                                         console.log(snapshot1.val());
+                                         console.log("Order"+ snapshot1.exists());
+                     
+                       if((snapshot1.exists()) )
+                           {
+                               
+                               var count=0;
+                               Orderr.innerHTML="";
+                               snapshot1.forEach(function(childSnapshot1)
+                                               {
+                                console.log(childSnapshot1.val());
+                                 
+                              //  var refOrders = firebase.database().ref("Orders/"+childSnapshot1.val());
+                                 
+                                //  refOrders.once("value", function(snapshot2)
+                                            //   {
+                                        
+                                   //  console.log(snapshot2.val());
+                                     if((childSnapshot1.val().OrderStatus)!= "Delivered" ){
+                                         
+        
+                                          console.log(childSnapshot1.key);
+                                          var addressData=  childSnapshot1.val().Address;
+                                          var  itemsData=childSnapshot1.val().Items;
+                                          var  pendingStateData=childSnapshot1.val().Payment;
+                                          var   pendingAmount=childSnapshot1.val().PendingPayment;
+                                          var  totalAmount=childSnapshot1.val().Total;
+                                          var  doneAmount=childSnapshot1.val().DonePayment;
+                                           
+                                         var div=document.createElement('div');
+                                         div.setAttribute('class','or');
+                                         var idiv=document.createElement('div');
+                                         
+                                           
+                                         var OrderPending=document.createElement('pa');
+                                      
+                                         var totalMoney=document.createElement('pa');
+                                         var paidMoney=document.createElement('pa');
+                                          var remainMoney=document.createElement('pa');
+                                        
+                                         var AddressUser=document.createElement('pa');
+                                         var OrderNo=document.createElement('pa');
+                                         var OrderStatus=document.createElement('pa');
+                                         
+                                         
+                                         
+                                            
+                                         var TOrderPending=document.createElement('pa');
+                                      
+                                         var TtotalMoney=document.createElement('pa');
+                                         var TpaidMoney=document.createElement('pa');
+                                          var TremainMoney=document.createElement('pa');
+                                        
+                                         var TAddressUser=document.createElement('pa');
+                                         var TOrderNo=document.createElement('pa');
+                                         var TOrderStatus=document.createElement('pa');
+           
+                                            //console.log("addd"+addressData);
+                                          var br=document.createElement('br');
+                                         var br1=document.createElement('br');
+                                         var br2=document.createElement('br');
+                                         var br3=document.createElement('br');
+                                         var br4=document.createElement('br');
+                                         var br5=document.createElement('br');
+                                        
+                                            AddressUser.innerHTML=addressData;
+                                            //ResName.innerHTML=snapshot2.val().ResID;
+                                            idiv.innerHTML=""; 
+                                            totalMoney.innerHTML=totalAmount+"$";
+                                            remainMoney.innerHTML=pendingAmount+"$";
+                                            OrderNo.innerHTML=childSnapshot1.val().OrderNo;
+                                            OrderStatus.innerHTML=childSnapshot1.val().OrderStatus;
+                                            paidMoney.innerHTML=doneAmount+"$";
+                                         
+                                            TAddressUser.innerHTML="Address :";
+                                            //ResName.innerHTML=snapshot2.val().ResID;
+                                            idiv.innerHTML=""; 
+                                            TtotalMoney.innerHTML="TotalAmount :";
+                                            TremainMoney.innerHTML="PendingAmount :";
+                                            TOrderNo.innerHTML="OrderNo :"
+                                            TOrderStatus.innerHTML="OrderStatus :";
+                                            TpaidMoney.innerHTML="DoneAmount :";
+                                         
+                                         if(childSnapshot1.val().deliveryman!="Deliveryman will be assigned shortly...")
+                                             {
+                                                 var select=document.createElement('p');
+                                                select.innerHTML="";
+                                                 select.innerHTML="Deliveryman :"+childSnapshot1.val().deliveryman;
+                                                 
+                                             }
+                                         else{
+                                              var select=document.createElement('select');
+                                        // select.setAttribute('type',"select");
+                                         select.setAttribute('class',"selectclass");
+                                        // select.setAttribute('onchange',DELchange);
+                                         select.setAttribute('for',childSnapshot1.key);
+                                         select.addEventListener('change',DELchange);
+                                             
+                                             
+                                         }
+                                         
+                                        
+                                         
+                                              
+                                            for(var item in itemsData) {
+                                                    itemsData[item].name;
+                                                    itemsData[item].count;
+                        
+                                                    var li=document.createElement('li');
+                                                   li.innerHTML=itemsData[item].name+" x "+itemsData[item].count;
+                                                   // console.log( itemsData[item].name);
+                                                    //ResItemsdiv.innerHTML=ResItemsdiv.innerHTML+itemsData[item].name+"<b id=\"cross\">*</b>"+itemsData[item].count+"<br>";
+                                                    idiv.appendChild(li);
+                                                }
+                    
+                                      div.appendChild(TOrderNo);   div.appendChild(OrderNo);div.appendChild(br);
+                                       div.appendChild(TOrderStatus);   div.appendChild(OrderStatus);  div.appendChild(br1);
+                                        div.appendChild(TAddressUser);  div.appendChild(AddressUser);  div.appendChild(br2);
+                                       div.appendChild(TremainMoney);  div.appendChild(remainMoney);   div.appendChild(br3);
+                                      div.appendChild(TpaidMoney);   div.appendChild(paidMoney);  div.appendChild(br4);
+                                     div.appendChild(TtotalMoney);    div.appendChild(totalMoney);   div.appendChild(br5);
+                                           div.appendChild(idiv);
+                                        div.appendChild(select);
+                                         Orderr.appendChild(div);
+                                          // OrderPending.appendChild(add);
+                                            //OrderPending.appendChild(datas);
+                                              //OrderPending.appendChild(totaldata);
+                                              //OrderPending.appendChild(pendata);
+                                              //OrderPending.appendChild(donedata);
+                                         
+                                        
+                                var refff = firebase.database().ref("Users/Deliveryman");
+                                       //var selcat=document.getElementById('selectclass');
+                                      var selcat=document.getElementsByClassName('selectclass');
+                                       refff.on("value", function(snapshot2)
+                                       {
+                                           selcat.innerHTML="";
+                                           snapshot2.forEach(function(childSnapshot)
+                                                            {
+                                               console.log(childSnapshot.val());
+                                             var opt = document.createElement("option");
+                                             opt.value= childSnapshot.val().Name;
+                                             opt.setAttribute('DID',childSnapshot.key);
+                                             opt.innerHTML = childSnapshot.val().Name; // whatever property it has
+
+                                                    console.log(count);
+                                            selcat[count].appendChild(opt);
+                                               
+                                           });
+                                           
+                                             var opt2 = document.createElement("option");
+                                             opt2.value= "Select";
+                                             opt2.innerHTML = "Select";
+                                             opt2.setAttribute("Selected","Selected");
+                                             selcat[count].appendChild(opt2);
+                                             
+                                           count++;
+                                       });
+                                         
+                                         
+                                          
+                                      }
+                                      else{
+                                          
+                                      }
+                                           
+                               
+                                      
+                                 // });
+                                 
+                                 
+                                 
+                             });
+                           }
+                     else{
+                        
+                     }
+                     
+                             
+            
+                         });
+            
+                
+                
+            
+                
+            }
+            
+            
+            
+            
+            
+    var res;
+    function req()
+    {
+        console.log(this.getAttribute('resname'));
+        res=this.getAttribute('resname');
+         var ref = firebase.database().ref("Users/Restaurants/"+res);
+        
+        ref.update({
+             Verified:"true"
+          });
+    }
+            
+            
+            
+            
+    
+     const reffchanged = firebase.database().ref('Users/Restaurants');
+        
+        reffchanged.on('child_changed', function(data) 
+                       {
+                            fun();
+               });
+                       
+    
+            
+            
+            
+            function DELchange()
+            {
+                //var x = document.getElementById("selectclass");
+                console.log(this.getAttribute('for'));
+               //  var c=document.getElementById('selectclass');
+                // var cat = c.options[c.selectedIndex].text;
+                console.log(this.options[this.selectedIndex].text);
+                
+                 var order=this.getAttribute('for');
+                
+                 const refffchanged = firebase.database().ref('Orders/'+order);
+                 refffchanged.update({
+                     deliveryman:this.options[this.selectedIndex].text
+               });
+                
+                var did=this.options[this.selectedIndex].getAttribute('did');
+               // console.log(this.options[this.selectedIndex].getAttribute('did'));
+               
+                const refff = firebase.database().ref('Users/Deliveryman/'+did+"/Orders");
+                refff.update({
+                    
+                     [order]:order
+                     
+                    
+               });
+                
+                
+                fun2();
+                
+            }
+            
+            
+            */
+            
+          function  fun3()
+            {
+                
+                
+                 let Songs=document.getElementById('Songs2');
+                
+            
+               var refItems = firebase.database().ref("Songs");
+
+
+               refItems.on("value",function(snapshot1)
+               		{
+               			  console.log(snapshot1.val());
+                          console.log("Songs:"+ snapshot1.exists());
+							Songs.innerHTML="";
+
+                          snapshot1.forEach(function(childSnapshot1)
+
+
+                          	{
+
+
+
+                          		  console.log(childSnapshot1.val());
+                                 
+                      
+        
+                                          console.log(childSnapshot1.key);
+                                          var artist=  childSnapshot1.val().artist;
+                                          var  album=childSnapshot1.val().album;
+                                          var  dur=childSnapshot1.val().duration;
+                                        //  var   file=childSnapshot1.val().file;
+                                          var  image=childSnapshot1.val().image;
+                                          var  name=childSnapshot1.val().name;
+                                           
+                                          var div=document.createElement('div');
+                                          div.setAttribute('class','both');
+
+                                         var divleft=document.createElement('div');
+                                         divleft.setAttribute('class','left');
+                                         var divright=document.createElement('div');
+                                         divright.setAttribute('class','right');
+                                           
+                                         var Nartist=document.createElement('p');
+                                      
+                                         var Nalbum=document.createElement('p');
+                                         var Ndur=document.createElement('p');
+                                         //var Nfile=document.createElement('p');
+                                        
+                                         var Nimage=document.createElement('img');
+                                         Nimage.setAttribute('src', image);
+                                         var Nname=document.createElement('p');
+                                      
+                                         
+                                            //console.log("addd"+addressData);
+                                       /*   var br=document.createElement('br');
+                                          var brr=document.createElement('br');
+                                         var br1=document.createElement('br');
+                                         var br2=document.createElement('br');
+                                         var br3=document.createElement('br');
+                                         var br4=document.createElement('br');
+                                         var br5=document.createElement('br');*/
+                                        
+                                           
+                                            Nalbum.innerHTML="Album :"+album;
+                                            Nartist.innerHTML="Artist :"+artist;
+                                            Ndur.innerHTML="Duration :"+dur;
+                                            Nname.innerHTML="Name :"+name;
+                                           
+                                           divleft.appendChild(Nimage);
+
+                                           divright.appendChild(Nname);
+                                           divright.appendChild(Nalbum);
+                                           divright.appendChild(Nartist);
+                                           divright.appendChild(Ndur);
+
+                                         
+                                   		div.appendChild(divleft);
+                                   		div.appendChild(divright);
+
+                                        
+                                         
+                    
+                                         Songs.appendChild(div);
+
+
+
+
+
+                          	});
+               		}
+
+               	);
+
+
+              
+                
+                
+            }
+
+
+            function funRE()
+            {
+
+
+
+              
+                
+              let Users=document.getElementById('SongsREQ');
+                
+            
+                var refItems = firebase.database().ref("SongsRequests");
+ 
+ 
+                refItems.on("value",function(snapshot1)
+                    {
+                        //console.log(snapshot1.val());
+                          // console.log("Users:"+ snapshot1.exists());
+                           Users.innerHTML="";
+ 
+                           snapshot1.forEach(function(childSnapshot1)
+ 
+ 
+                             {
+ 
+ 
+ 
+                                 console.log(childSnapshot1.val());
+                                  
+                       
+         
+                                           console.log(childSnapshot1.key);
+                                      
+                                           var  s=childSnapshot1.val().songName;
+                                           var  name=childSnapshot1.val().username;
+                                       
+                                           var div=document.createElement('div');
+                                           div.setAttribute('class','both2');
+                                          var Nname=document.createElement('p');
+                                          var Ns=document.createElement('p');
+                                          //var Nfile=document.createElement('p');
+                                         
+                                          
+                                             //console.log("addd"+addressData);
+                                        /*   var br=document.createElement('br');
+                                           var brr=document.createElement('br');
+                                          var br1=document.createElement('br');
+                                          var br2=document.createElement('br');
+                                          var br3=document.createElement('br');
+                                          var br4=document.createElement('br');
+                                          var br5=document.createElement('br');*/
+                                         
+                                            
+                                             Nname.innerHTML="Name :"+name;
+                                             Ns.innerHTML="Songname :"+s;
+                                         
+                                          
+                                        div.appendChild(Ns);
+                                        div.appendChild(Nname);
+ 
+                                         
+                                          
+                     
+                                          Users.appendChild(div);
+ 
+ 
+ 
+ 
+ 
+                             });
+                    }
+ 
+                  );
+ 
+ 
+               
+                 
+
+                  
+              
+            }
+    
+
+
+
+</script>
+        
+        
+    </body>
+
+
+</html>

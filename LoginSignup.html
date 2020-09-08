@@ -1,0 +1,502 @@
+
+<html>
+<head>
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+    
+    
+    
+    
+<script>
+    if(localStorage.getItem("username"))
+        window.location.href='Profile.html';
+        
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5media/1.1.8/html5media.min.js"></script>     
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.min.js"></script>    
+<script type="text/javascript" src="JS/loginsignup.js"></script>
+<script type="text/javascript" src="main2.js"></script>
+<script type="text/javascript" src="JS/Player.js"></script>
+    
+    
+    
+<link rel="stylesheet" href="CSS/loginsignup.css">
+<link rel="stylesheet" href="CSS/Player.css">
+   
+   
+    
+    
+    
+    
+    
+    
+    <style>
+    
+        #login_btn:hover{
+            opacity: 0.7;
+        }
+        
+        #sub:hover{
+            opacity: 0.7;
+        }
+        
+        .single-item{
+            margin: 20px;
+            padding: 20px;  
+            box-shadow: 0 0 20px 0px #999;
+            transition: 0.1s all;
+        }
+        
+        .single-item:hover{
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+        
+        .snipcart-thumb{
+            font-family: oswald;
+            
+        }
+        
+       
+        
+        #Container-Restaurants{
+            margin-top: 110px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        
+        #totaladd {
+             font-family: oswald;
+             
+            box-shadow: 0px 0px 10px 1px gray;
+            border:#dd2600 solid 1px;
+             margin-left: 2px;
+        }
+        #area,#city{
+            font-family: oswald;
+             margin: 4px;
+            margin-left: 20px;
+            box-shadow: 0px 0px 10px 1px gray;
+            border:#dd2600 solid 1px;
+        }
+        
+        #flat{
+            width: 50px;
+            font-family: oswald;
+            box-shadow: 0px 0px 10px 1px gray;
+            border:#dd2600 solid 1px;
+            
+        }
+        aaa{
+             font-family: oswald;
+             font-size: 18px;
+           
+        }
+        
+        .hr{
+            
+   
+    border-top: 2px solid #ccc;
+    margin-left: 21px;
+    border-color:#dd2600;
+        }
+        
+        
+        /* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+        ::-webkit-scrollbar:hover {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+    width: 10px;
+}
+        
+        
+        .show-cart li {
+  display: flex;
+           
+}
+.card {
+  margin-bottom: 20px;
+    
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+        
+        .font{
+            font-family: oswald;
+        }
+        
+        .total-cart{
+            font-family: oswald;
+            font-size: 18px;
+
+        }
+        
+        .modal-title
+        {
+            font-size: 25px;
+            color: #dd2600;
+            margin-left: 370px;
+        }
+        
+        .total{
+            font-size: 22px;
+          
+        }
+        
+        
+        .modal-header
+        {
+            border-bottom: solid #eeeeee 2px;
+    
+        }
+        
+        .btn-primary{
+            background: #dd2600;
+        }
+        
+        .btn-secondary:hover{
+            background: white;
+            opacity: 0.7;
+        }
+        
+        .btn-primary:hover{
+            opacity: 0.7;
+            background: #dd2600;
+        }
+        
+        .close{
+            margin-left: 330px;
+        }
+        
+        #cart-button{
+            font-family: oswald;
+              display: block;
+	margin-right:100px;
+            margin-top: -57px;
+	padding: 2px 25px;
+	text-decoration: none;
+	border-radius: 60px;
+  line-height: 43px;
+  color: #FFF;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+        }
+        
+        #clear-cart-button{
+             display: block;
+	margin-right:100px;
+	padding: 2px 25px;
+	text-decoration: none;
+	border-radius: 60px;
+  line-height: 45px;
+  color: #FFF;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+        }
+    
+        td{
+            font-family: oswald;
+            
+        }
+        
+        .plus-item,.minus-item{
+            background: white;
+            font-size: 20px;
+            
+        }
+        
+        .plus-item:hover,.minus-item:hover{
+           
+            opacity: 0.7;
+        }
+        
+        #dolor{
+            font-size: 16px;
+            float: left;
+            margin-top: -1px;
+         
+        }
+        
+        .fnt{
+            font-size: 12px;
+            font-family: oswald;
+        }
+        
+        i{
+            color: white;
+            margin-right: 5px;
+        }
+        
+        
+  
+
+
+.example {
+  width: 20%;
+  position: absolute;
+  top: 40%;
+  margin-left: 200px;
+}
+
+    </style>
+    
+    
+    
+</head>
+<body>
+	<div class="main ">
+        
+        
+        <!------------------Login/Signup------------------------------------------------------------------>
+        <div class="main-nav">
+          
+        <div id="logo"><a id="aa"  href="Profile.html"><img src="Images/MusiclogoW.png" width="60px" style="margin: 7px;margin-left: 30px;" ></a></div>
+            
+        
+           
+        <div class="btns">
+	       <ul> 
+              
+               <li class="lii"><a class="login" href="#0" id="ss" style="color: white;">Login</a></li>
+             
+         <!--   <li class="lii">  <button class="clear-cart btn btn-danger" id="clear-cart-button">Clear Cart</button></li>    -->
+	       </ul>
+        </div>
+        </div>
+        
+        
+        
+  
+        
+      
+
+        <div class="user-modal">
+		<div class="user-modal-container">
+			<ul class="switcher">
+				<li id="sn"><a href="#0">Sign in</a></li>
+				<li><a href="#0">New account</a></li>
+               
+			</ul>
+        
+
+          <!------------------Login------------------------------------------------------------------>  
+			<div id="login">
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+						<span class="error-message">An account with this email address does not exist!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
+						<a href="#0" class="hide-password">Show</a>
+						<span class="error-message">Wrong password! Try again.</span>
+					</p>
+
+					
+
+					<p class="fieldset">
+                        <button class="full-width has-padding lo"   value="Login" onclick="login()">Login</button>
+					</p>
+				</form>
+
+				<p class="form-bottom-message"><a href="#0">Forgot your password?</a></p>
+				<!-- <a href="#0" class="close-form">Close</a> -->
+			</div>
+
+            
+            <!------------------Signup------------------------------------------------------------------>
+			<div id="signup" >
+				<form class="form" >
+					<p class="fieldset">
+						<label class="image-replace username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Name">
+						<span class="error-message">Your username can only contain numeric and alphabetic symbols!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<span class="error-message">Enter a valid email address!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
+						<a href="#0" class="hide-password">Show</a>
+						
+					</p>
+
+					
+
+					<p class="fieldset">
+                        <button class="full-width has-padding lo"  onclick="signup()" value="Create account">Signup</button>
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div>
+            
+            
+            
+            
+            
+            
+            <!------------------Password Reset------------------------------------------------------------------>
+
+			<div id="reset-password">
+				<p class="form-message">Lost your password? Please enter your email address.<br> You will receive a link to create a new password.</p>
+
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="error-message">An account with this email does not exist!</span>
+					</p>
+
+					<p class="fieldset">
+                        <button class="full-width has-padding lo"   value="Reset password" onclick="re()" >Reset</button>
+					</p>
+				</form>
+
+				<p class="form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div>
+			<a href="#0" class="close-form">Close</a>
+		</div>
+	</div>
+        
+        
+        
+        
+        
+        
+        
+        <!--div class="container" style="margin-top: 100px;">
+    <div class="column add-bottom">
+        <div id="mainwrap">
+            <div id="nowPlay">
+                <span id="npAction">Paused...</span><span id="npTitle"></span>
+            </div>
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
+                </div>
+                <div id="tracks">
+                    <a id="btnPrev">&vltri;</a><a id="btnNext">&vrtri;</a>
+                </div>
+            </div>
+            <div id="plwrap">
+                <ul id="plList"></ul>
+            </div>
+        </div>
+    </div>
+   
+</div=-->
+
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    <!--div class="column add-bottom center" style="margin-top: 100px;">
+        <p>Designed and Devloped by Umang Patel</p>
+        <p>@Copyright 2019</p>
+    </div-->
+    
+    
+
+
+<!------------------Firebase------------------------------------------------------------------>
+
+		<!--div id="recaptcha-container" class="recaptcha-container"></div-->
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDGPqjXxUGaoUyS1smPMpIRJjQg-BT6Xyg",
+    authDomain: "voicemusic-8f29b.firebaseapp.com",
+    databaseURL: "https://voicemusic-8f29b.firebaseio.com",
+    projectId: "voicemusic-8f29b",
+    storageBucket: "voicemusic-8f29b.appspot.com",
+    messagingSenderId: "192410163862",
+    appId: "1:192410163862:web:3e15fdbe5c9a7623"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+   
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

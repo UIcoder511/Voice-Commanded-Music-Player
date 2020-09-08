@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <style>
+            
+            .stars{
+                background-image: url('Star_empty.svg');
+            }
+
+            .stars {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+   
+    content: "\2605";
+}
+.stars:before {
+   content: "\2605";
+   position: absolute;
+   visibility:visible;
+   color: rgb(218, 218, 218);
+}
+.stars:checked:before {
+   content: "\2606";
+   color:yellow;
+   position: absolute;
+}
+            
+            </style>
+
+
+
+     
+
+    </head>
+        <body>
+
+            <div id="rating">
+
+
+            </div>
+                 <script>
+                 
+                    var rat=document.getElementById('rating');
+                    var star=document.createElement('input');
+                    star.setAttribute('type','radio');
+                    star.setAttribute('name','stars');
+                    star.setAttribute('value','1');
+                    star.setAttribute('class','stars');
+                  
+                    star.addEventListener('change',show);
+                    rat.appendChild(star);
+
+                    var star2=document.createElement('input');
+                    star2.setAttribute('type','radio');
+                    star2.setAttribute('name','stars');
+                    star2.setAttribute('value','2');
+                    star2.setAttribute('class','stars');
+                 
+                    star2.addEventListener('change',show);
+                    rat.appendChild(star2);
+
+                    var star3=document.createElement('input');
+                    star3.setAttribute('type','radio');
+                    star3.setAttribute('name','stars');
+                    star3.setAttribute('value','3');
+                    star3.setAttribute('class','stars');
+                  
+                    star3.addEventListener('change',show);
+                    rat.appendChild(star3);
+
+                    var star4=document.createElement('input');
+                    star4.setAttribute('type','radio');
+                    star4.setAttribute('name','stars');
+                    star4.setAttribute('value','4');
+                    star4.setAttribute('class','stars');
+                 
+                    star4.addEventListener('change',show);
+                    rat.appendChild(star4);
+
+                    var star5=document.createElement('input');
+                    star5.setAttribute('type','radio');
+                    star5.setAttribute('name','stars');
+                    star5.setAttribute('value','5');
+                    star5.setAttribute('class','stars');
+                  
+                    star5.addEventListener('change',show);
+                    rat.appendChild(star5);
+
+                    for(i=1;i<=5;i++)
+                    {
+                        star.setAttribute('value',i);
+                        rat.appendChild(star);
+                    }
+
+  
+                    var stars=document.getElementsByClassName('stars')
+                        
+                        function show()
+                        {
+                            alert(this.value);
+                        }
+                        
+                 
+                 
+              
+                      
+                        </script>
+
+                       
+                   
+        </body>
+   
+</html>

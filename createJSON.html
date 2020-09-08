@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    
+       
+        <!------------------Firebase------------------------------------------------------------------>
+
+		
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-storage.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDGPqjXxUGaoUyS1smPMpIRJjQg-BT6Xyg",
+    authDomain: "voicemusic-8f29b.firebaseapp.com",
+    databaseURL: "https://voicemusic-8f29b.firebaseio.com",
+    projectId: "voicemusic-8f29b",
+    storageBucket: "voicemusic-8f29b.appspot.com",
+    messagingSenderId: "192410163862",
+    appId: "1:192410163862:web:3e15fdbe5c9a7623"
+  };
+  firebase.initializeApp(config);
+</script>
+        
+
+    <script>
+
+
+            var data={
+    "data": [
+        {
+            "id": 664830282,
+            "readable": true,
+            "title": "Tum Hi Ho",
+            "title_short": "Tum Hi Ho",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/664830282",
+            "duration": 262,
+            "rank": 497229,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-d.dzcdn.net/stream/c-db4d832b8508ff62a6a6e37b62776fe7-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 93532472,
+                "title": "Arijit Singh (All In One)",
+                "cover": "https://api.deezer.com/album/93532472/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/93532472/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 702959842,
+            "readable": true,
+            "title": "Bekhayali",
+            "title_short": "Bekhayali",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/702959842",
+            "duration": 370,
+            "rank": 453741,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-2.dzcdn.net/stream/c-215372d604e9a8b87c2936abcad5750e-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 101582452,
+                "title": "Kabir Singh",
+                "cover": "https://api.deezer.com/album/101582452/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/101582452/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 702959912,
+            "readable": true,
+            "title": "Tujhe Kitna Chahne Lage",
+            "title_short": "Tujhe Kitna Chahne Lage",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/702959912",
+            "duration": 284,
+            "rank": 450850,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-3.dzcdn.net/stream/c-39aebbd67e42c03e6e21c5a4416fbd11-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 101582452,
+                "title": "Kabir Singh",
+                "cover": "https://api.deezer.com/album/101582452/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/cf7eca8d53062d597fe977dbe6e051d8/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/101582452/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687102,
+            "readable": true,
+            "title": "Arijit Singh Mashup",
+            "title_short": "Arijit Singh Mashup",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687102",
+            "duration": 249,
+            "rank": 278865,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-d.dzcdn.net/stream/c-dba3f75f14340e79b6a9278680aed88d-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687122,
+            "readable": true,
+            "title": "Bas Ek Baar",
+            "title_short": "Bas Ek Baar",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687122",
+            "duration": 323,
+            "rank": 368450,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-9.dzcdn.net/stream/c-93ad0abeb2d4e36ad11ce8efd1a259b7-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687092,
+            "readable": true,
+            "title": "Tum Hi Ho",
+            "title_short": "Tum Hi Ho",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687092",
+            "duration": 262,
+            "rank": 398901,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-d.dzcdn.net/stream/c-db4d832b8508ff62a6a6e37b62776fe7-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687852,
+            "readable": true,
+            "title": "Kabira",
+            "title_short": "Kabira",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687852",
+            "duration": 269,
+            "rank": 244674,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-4.dzcdn.net/stream/c-49a30f0297741f4c1698234aa3ddcdfa-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 664830572,
+            "readable": true,
+            "title": "Enna Sona",
+            "title_short": "Enna Sona",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/664830572",
+            "duration": 213,
+            "rank": 323097,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-d.dzcdn.net/stream/c-d425866c182f56f1fe52aebbaf37b832-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 93532472,
+                "title": "Arijit Singh (All In One)",
+                "cover": "https://api.deezer.com/album/93532472/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/93532472/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 798199162,
+            "readable": true,
+            "title": "Tum Saath Ho",
+            "title_short": "Tum Saath Ho",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/798199162",
+            "duration": 341,
+            "rank": 251543,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-6.dzcdn.net/stream/c-64f1625b1a6bc503825fb38e07509f6c-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 117885822,
+                "title": "Romantic Hits",
+                "cover": "https://api.deezer.com/album/117885822/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/ba0572f6c10c4552d978494678e82cac/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/ba0572f6c10c4552d978494678e82cac/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/ba0572f6c10c4552d978494678e82cac/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/ba0572f6c10c4552d978494678e82cac/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/117885822/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 664830392,
+            "readable": true,
+            "title": "Kabhi Jo Baadal Barse",
+            "title_short": "Kabhi Jo Baadal Barse",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/664830392",
+            "duration": 254,
+            "rank": 340776,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-3.dzcdn.net/stream/c-3ca24667dd56e7a52a5fbd7b64db0878-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 93532472,
+                "title": "Arijit Singh (All In One)",
+                "cover": "https://api.deezer.com/album/93532472/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/93532472/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687252,
+            "readable": true,
+            "title": "Nashe Si Chadh Gayi",
+            "title_short": "Nashe Si Chadh Gayi",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687252",
+            "duration": 237,
+            "rank": 335722,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-0.dzcdn.net/stream/c-0e9d18fa0f9af2e98c7e048786f055a1-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 133088188,
+            "readable": true,
+            "title": "Channa Mereya (From \"Ae Dil Hai Mushkil\")",
+            "title_short": "Channa Mereya (From \"Ae Dil Hai Mushkil\")",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/133088188",
+            "duration": 289,
+            "rank": 425267,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-7.dzcdn.net/stream/c-7a8d26ddcbe2b22000e1a0a55b8f93e7-5.mp3",
+            "artist": {
+                "id": 290619,
+                "name": "Pritam",
+                "link": "https://www.deezer.com/artist/290619",
+                "picture": "https://api.deezer.com/artist/290619/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/290619/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 14166234,
+                "title": "Channa Mereya (From \"Ae Dil Hai Mushkil\")",
+                "cover": "https://api.deezer.com/album/14166234/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/4576636ed52906c428f2ba6a3be748ff/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/4576636ed52906c428f2ba6a3be748ff/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/4576636ed52906c428f2ba6a3be748ff/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/4576636ed52906c428f2ba6a3be748ff/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/14166234/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 131109694,
+            "readable": true,
+            "title": "Ae Dil Hai Mushkil Title Track (From \"Ae Dil Hai Mushkil\")",
+            "title_short": "Ae Dil Hai Mushkil Title Track (From \"Ae Dil Hai Mushkil\")",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/131109694",
+            "duration": 269,
+            "rank": 400674,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-f.dzcdn.net/stream/c-f2670a8d71dc61ead8a1fd61cfc4ebf7-5.mp3",
+            "artist": {
+                "id": 290619,
+                "name": "Pritam",
+                "link": "https://www.deezer.com/artist/290619",
+                "picture": "https://api.deezer.com/artist/290619/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/290619/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 13923414,
+                "title": "Ae Dil Hai Mushkil Title Track (From \"Ae Dil Hai Mushkil\")",
+                "cover": "https://api.deezer.com/album/13923414/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/394038089fa2b05873a913bae9a4f43b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/394038089fa2b05873a913bae9a4f43b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/394038089fa2b05873a913bae9a4f43b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/394038089fa2b05873a913bae9a4f43b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/13923414/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 526664322,
+            "readable": true,
+            "title": "Tera Fitoor (From \"Genius\")",
+            "title_short": "Tera Fitoor (From \"Genius\")",
+            "link": "https://www.deezer.com/track/526664322",
+            "duration": 310,
+            "rank": 250629,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 2,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-0.dzcdn.net/stream/c-0d13b43c4497c15cc718c3dce5f0abe3-7.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 68075652,
+                "title": "Tera Fitoor (From \"Genius\")",
+                "cover": "https://api.deezer.com/album/68075652/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/81aaf10f84c43af9f6d51c54964b2174/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/81aaf10f84c43af9f6d51c54964b2174/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/81aaf10f84c43af9f6d51c54964b2174/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/81aaf10f84c43af9f6d51c54964b2174/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/68075652/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 664830292,
+            "readable": true,
+            "title": "Arijit Singh Mashup",
+            "title_short": "Arijit Singh Mashup",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/664830292",
+            "duration": 249,
+            "rank": 190323,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-d.dzcdn.net/stream/c-dba3f75f14340e79b6a9278680aed88d-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 93532472,
+                "title": "Arijit Singh (All In One)",
+                "cover": "https://api.deezer.com/album/93532472/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/9c3b83b01508fa1dcdd342e95f5f915d/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/93532472/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687112,
+            "readable": true,
+            "title": "Ae Dil Hai Mushkil",
+            "title_short": "Ae Dil Hai Mushkil",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687112",
+            "duration": 269,
+            "rank": 334264,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-b.dzcdn.net/stream/c-b427783bbbeacf32e3c68778178862d0-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687392,
+            "readable": true,
+            "title": "Yeh Fitoor Mera",
+            "title_short": "Yeh Fitoor Mera",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687392",
+            "duration": 283,
+            "rank": 216025,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-8.dzcdn.net/stream/c-85d6109ab5a16dc555b645da298deaf8-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687952,
+            "readable": true,
+            "title": "O Soniye",
+            "title_short": "O Soniye",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687952",
+            "duration": 256,
+            "rank": 169140,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-4.dzcdn.net/stream/c-4c0ff8c192ecb56d0fa32646af695388-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 114415828,
+            "readable": true,
+            "title": "Daayre",
+            "title_short": "Daayre",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/114415828",
+            "duration": 290,
+            "rank": 289078,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-8.dzcdn.net/stream/c-8d90672c1e3e26fc70c79a33477fc358-4.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 11851044,
+                "title": "Dilwale (Original Motion Picture Soundtrack)",
+                "cover": "https://api.deezer.com/album/11851044/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/0b4de49822945cd98493768307cfeb62/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/0b4de49822945cd98493768307cfeb62/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/0b4de49822945cd98493768307cfeb62/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/0b4de49822945cd98493768307cfeb62/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/11851044/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 388198041,
+            "readable": true,
+            "title": "Hawayein (From \"Jab Harry Met Sejal\")",
+            "title_short": "Hawayein (From \"Jab Harry Met Sejal\")",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/388198041",
+            "duration": 289,
+            "rank": 373540,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-e.dzcdn.net/stream/c-e33ed302c98717911f9a8b158bd4db6c-4.mp3",
+            "artist": {
+                "id": 290619,
+                "name": "Pritam",
+                "link": "https://www.deezer.com/artist/290619",
+                "picture": "https://api.deezer.com/artist/290619/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/290619/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 45314981,
+                "title": "Hawayein (From \"Jab Harry Met Sejal\")",
+                "cover": "https://api.deezer.com/album/45314981/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/c32ad05e92f036b34fece9058ea3dacf/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/c32ad05e92f036b34fece9058ea3dacf/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/c32ad05e92f036b34fece9058ea3dacf/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/c32ad05e92f036b34fece9058ea3dacf/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/45314981/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 725235652,
+            "readable": true,
+            "title": "Arijit Singh Mashup",
+            "title_short": "Arijit Singh Mashup",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/725235652",
+            "duration": 249,
+            "rank": 167612,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-d.dzcdn.net/stream/c-dba3f75f14340e79b6a9278680aed88d-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 106190902,
+                "title": "King of Bollywood Music",
+                "cover": "https://api.deezer.com/album/106190902/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/33c7f8a7a8792560f694abca1bb33dc9/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/33c7f8a7a8792560f694abca1bb33dc9/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/33c7f8a7a8792560f694abca1bb33dc9/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/33c7f8a7a8792560f694abca1bb33dc9/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/106190902/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 134863004,
+            "readable": true,
+            "title": "Channa Mereya",
+            "title_short": "Channa Mereya",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/134863004",
+            "duration": 289,
+            "rank": 337449,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-7.dzcdn.net/stream/c-7a8d26ddcbe2b22000e1a0a55b8f93e7-5.mp3",
+            "artist": {
+                "id": 290619,
+                "name": "Pritam",
+                "link": "https://www.deezer.com/artist/290619",
+                "picture": "https://api.deezer.com/artist/290619/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist/d4914ccd414067cd5e2c108867079a85/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/290619/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 14388582,
+                "title": "Ae Dil Hai Mushkil (Original Motion Picture Soundtrack)",
+                "cover": "https://api.deezer.com/album/14388582/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/0b5d74465f965058aea1b66cad7717d2/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/0b5d74465f965058aea1b66cad7717d2/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/0b5d74465f965058aea1b66cad7717d2/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/0b5d74465f965058aea1b66cad7717d2/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/14388582/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687132,
+            "readable": true,
+            "title": "Muskurane",
+            "title_short": "Muskurane",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687132",
+            "duration": 334,
+            "rank": 314093,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-8.dzcdn.net/stream/c-819f1d3a3e9ffeaa7db349d3606637ed-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687962,
+            "readable": true,
+            "title": "Raabta",
+            "title_short": "Raabta",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687962",
+            "duration": 243,
+            "rank": 204004,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-3.dzcdn.net/stream/c-3149143fefe1ee4f6229d0a3a038f93c-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 693687662,
+            "readable": true,
+            "title": "Hai Dil Ye Mera",
+            "title_short": "Hai Dil Ye Mera",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/693687662",
+            "duration": 297,
+            "rank": 152752,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 2,
+            "preview": "https://cdns-preview-e.dzcdn.net/stream/c-ee679150f1b66e81bf2a91ad226ac474-3.mp3",
+            "artist": {
+                "id": 3830821,
+                "name": "Arijit Singh",
+                "link": "https://www.deezer.com/artist/3830821",
+                "picture": "https://api.deezer.com/artist/3830821/image",
+                "picture_small": "https://cdns-images.dzcdn.net/images/artist//56x56-000000-80-0-0.jpg",
+                "picture_medium": "https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg",
+                "picture_big": "https://cdns-images.dzcdn.net/images/artist//500x500-000000-80-0-0.jpg",
+                "picture_xl": "https://cdns-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/artist/3830821/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 99754012,
+                "title": "King Of Bollywood",
+                "cover": "https://api.deezer.com/album/99754012/image",
+                "cover_small": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://cdns-images.dzcdn.net/images/cover/3913b7dd6fdbd99556304117e69f827b/1000x1000-000000-80-0-0.jpg",
+                "tracklist": "https://api.deezer.com/album/99754012/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        }
+    ],
+    "total": 300,
+    "next": "https://api.deezer.com/search?redirect_uri=http%253A%252F%252Fguardian.mashape.com%252Fcallback&q=arijit%20singh&index=25"
+}
+
+
+function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+
+//console.log(makeid(5));
+
+
+
+        function manip(data2)
+        {
+            var ne=[];
+
+            const reff=firebase.database().ref("Songs");
+
+            for(var i = 0; i < 2; i++)
+                {
+                    // var keyy=makeid(20)
+                    // console.log(data2.data[i])
+                    // ne.push({
+
+                    //         key:keyy,
+                    //         file:data2.data[i].preview,
+                    //         image:data2.data[i].album.cover_big,
+                    //         album:data2.data[i].album.title,
+                    //         artist:data2.data[i].artist.name,
+                    //         duration:data2.data[i].duration
+
+                    //         })
+                    // var d= data2.data[i];
+
+                    reff.push({
+            name:data2.data[i].title,
+            duration:data2.data[i].duration,
+            file:data2.data[i].preview,
+            artist:data2.data[i].artist.name,
+            album:data2.data[i].album.title,
+            image:data2.data[i].album.cover_big,
+           
+        }).then((snapshot)=>{
+          reff.child(snapshot.key).update({"key": snapshot.key})
+        })
+
+
+                    
+                }
+
+
+               
+        
+     
+
+
+
+            console.log(ne)
+        }
+        
+        //manip(data)
+        
+        
+        
+        
+        </script>
+    
+    <button onclick="manip(data)"></button>
+</body>
+</html>

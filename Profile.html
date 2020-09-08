@@ -1,0 +1,1308 @@
+
+
+
+      
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    if(!localStorage.getItem("username"))
+        window.location.href='LoginSignup.html';
+    
+    </script>
+    
+    
+<!------------------Firebase------------------------------------------------------------------>
+
+		<!--div id="recaptcha-container" class="recaptcha-container"></div-->
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDGPqjXxUGaoUyS1smPMpIRJjQg-BT6Xyg",
+    authDomain: "voicemusic-8f29b.firebaseapp.com",
+    databaseURL: "https://voicemusic-8f29b.firebaseio.com",
+    projectId: "voicemusic-8f29b",
+    storageBucket: "voicemusic-8f29b.appspot.com",
+    messagingSenderId: "192410163862",
+    appId: "1:192410163862:web:3e15fdbe5c9a7623"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+   
+    
+  <script src="https://raw.githubusercontent.com/iconfu/svg-inject/v1.2.3/dist/svg-inject.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="JS/svg.js"></script>
+
+  
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>  
+    
+    <script type="text/javascript" src="./JS/darken.js"></script>
+
+ <!-- <script src="js/playlistVC.js"></script> -->
+    <script src="js/playerVC.js"></script>
+    <script src="js/mainVC.js"></script>
+    <script type="text/javascript" src="JS/Rec.js"></script>
+    
+     <link rel="stylesheet" href="CSS/styles.css">
+    <!-- <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+    
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5media/1.1.8/html5media.min.js"></script>     
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.min.js"></script>     -->
+<script type="text/javascript" src="JS/loginsignup.js"></script>
+<script type="text/javascript" src="main2.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
+<script src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+<script src="../VoiceMusic - Copy (2) - Copy/JS/colors.js"></script>
+
+    <!--script type="text/javascript" src="JS/Player.js"></script-->
+    
+    
+    
+<link rel="stylesheet" href="CSS/loginsignup.css">
+<!--link rel="stylesheet" href="CSS/Player.css"-->
+   
+   
+    
+    <style>
+    
+        #login_btn:hover{
+            opacity: 0.7;
+        }
+        
+        #sub:hover{
+            opacity: 0.7;
+        }
+        
+        .single-item{
+            margin: 20px;
+            padding: 20px;  
+            box-shadow: 0 0 20px 0px #999;
+            transition: 0.1s all;
+        }
+        
+        .single-item:hover{
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+        
+        .snipcart-thumb{
+            font-family: oswald;
+            
+        }
+        
+       
+        
+        #Container-Restaurants{
+            margin-top: 110px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        
+        #totaladd {
+             font-family: oswald;
+             
+            box-shadow: 0px 0px 10px 1px gray;
+            border:#dd2600 solid 1px;
+             margin-left: 2px;
+        }
+        #area,#city{
+            font-family: oswald;
+             margin: 4px;
+            margin-left: 20px;
+            box-shadow: 0px 0px 10px 1px gray;
+            border:#dd2600 solid 1px;
+        }
+        
+        #flat{
+            width: 50px;
+            font-family: oswald;
+            box-shadow: 0px 0px 10px 1px gray;
+            border:#dd2600 solid 1px;
+            
+        }
+        aaa{
+             font-family: oswald;
+             font-size: 18px;
+           
+        }
+        
+        .hr{
+            
+   
+    border-top: 2px solid #ccc;
+    margin-left: 21px;
+    border-color:#dd2600;
+        }
+        
+        
+        /* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+        ::-webkit-scrollbar:hover {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+    width: 10px;
+}
+        
+        
+        .show-cart li {
+  display: flex;
+           
+}
+.card {
+  margin-bottom: 20px;
+    
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+        
+        .font{
+            font-family: oswald;
+        }
+        
+        .total-cart{
+            font-family: oswald;
+            font-size: 18px;
+
+        }
+        
+        .modal-title
+        {
+            font-size: 25px;
+            color: #dd2600;
+            margin-left: 370px;
+        }
+        
+        .total{
+            font-size: 22px;
+          
+        }
+        
+        
+        .modal-header
+        {
+            border-bottom: solid #eeeeee 2px;
+          
+        }
+        
+        .btn-primary{
+            background: #dd2600;
+        }
+        
+        .btn-secondary:hover{
+            background: white;
+            opacity: 0.7;
+        }
+        
+        .btn-primary:hover{
+            opacity: 0.7;
+            background: #dd2600;
+        }
+        
+        .close{
+            margin-left: 330px;
+        }
+        
+        #cart-button{
+            font-family: oswald;
+              display: block;
+	margin-right:100px;
+            margin-top: -57px;
+	padding: 2px 25px;
+	text-decoration: none;
+	border-radius: 60px;
+  line-height: 43px;
+  color: #FFF;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+        }
+        
+        #clear-cart-button{
+             display: block;
+	margin-right:100px;
+	padding: 2px 25px;
+	text-decoration: none;
+	border-radius: 60px;
+  line-height: 45px;
+  color: #FFF;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+        }
+    
+        td{
+            font-family: oswald;
+            
+        }
+        
+        .plus-item,.minus-item{
+            background: white;
+            font-size: 20px;
+            
+        }
+        
+        .plus-item:hover,.minus-item:hover{
+           
+            opacity: 0.7;
+        }
+        
+        #dolor{
+            font-size: 16px;
+            float: left;
+            margin-top: -1px;
+         
+        }
+        
+        .fnt{
+            font-size: 12px;
+            font-family: oswald;
+        }
+        
+        i{
+            color: white;
+            margin-right: 5px;
+        }
+
+
+        /* The Modal (background) */
+.modalo {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 11111; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-contento {
+  /* background-color: #fefefe; */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  /* border: 1px solid #888; */
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.closeo {
+  color: #aaa;
+  /* float: right; */
+  margin: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeo:hover,
+.closeo:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+        
+        
+  
+
+
+
+/*tab--------------------------------------*/
+
+/* Style the tab */
+.mtab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.mtab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.mtab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.mtab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.mtabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 60%;
+ 
+  
+}
+
+.right{
+                
+                margin-left:190px;
+                padding-bottom: 10px;
+              }
+              
+              .both{
+                box-shadow: 0px 0px 1px 1px #cccccc;
+                margin: 10px 0px;
+              }
+  
+              .both2{
+                padding: 2px;
+                margin:10px;
+                box-shadow: 0px 0px 7px 1px #cccccc;
+              }
+  
+              .left{
+                float: left;
+              }
+  
+              .left img{
+                width: 174px;
+                height: 174px;
+              }
+
+
+
+              .addBu{
+                padding: 10px;
+                color: black;
+              }
+
+                  
+ /*SEARCH FORM*/
+.search-form {
+    border-radius: 30px 0px 0px 30px;
+   
+    /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+}
+/*to cange only one form and not all give unique class name like  class="search-form" */
+ .search-btn {
+    border-radius: 0px 30px 30px 0px;
+    cursor:pointer;
+}
+        
+        
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+.searchbox-container {
+ 
+    margin: 18px;
+  height: 50px;
+  /* display: inline-block; */
+   
+   
+}
+
+.searchbutton, .searchbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  transition: background-color, 0.3s;
+  font-size: 20px;
+  line-height: 1;
+    font-family: oswald;
+  color: #999;
+  border-radius: 0;
+  float: left;
+  border: none;
+  height: 50px;
+  
+}
+
+input[type="search"] {
+  border-radius: 100px 0 0 100px;
+  -webkit-appearance: none;
+}
+
+.searchbox {
+  padding: 0px 20px;
+     border: 1px solid #ddd;
+   
+}
+
+.searchbox:focus {
+  outline: thin dotted;
+  outline-offset: -1px;
+}
+.searchbox.placeholder {
+  color: #aaa;
+ 
+    
+}
+.searchbox:-moz-placeholder {
+   color: #aaa;
+}
+.searchbox::-moz-placeholder {
+  color: #aaa;
+}
+.searchbox:-ms-input-placeholder {
+  color: #aaa;
+}
+.searchbox::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+.searchbutton {
+  width: 50px;
+  padding: 0;
+ 
+  border-left: 1px solid #dd2600;
+  border-radius: 0 100px 100px 0;
+  background: #dd2600;
+}
+.searchbutton:hover, .searchbutton:focus {
+  opacity: 0.7;
+  outline: thin dotted;
+  outline-offset: -1px;
+    
+}
+.searchbutton:active {
+  color: #dd2600;
+}
+
+
+.stars {
+    visibility: hidden;
+    font-size: 30px;
+    cursor: pointer;
+    content: "\2605";
+    
+    background-image: url(Star_empty.svg);
+
+}
+
+.stars:before {
+   content: "\2605";
+   position: absolute;
+   visibility:visible;
+   color: rgb(218, 218, 218);
+}
+.stars:checked:before {
+   content: "\2606";
+   color:yellow;
+   position: absolute;
+}
+
+.rating{
+  margin: 0px 108px 12px 0px;
+}
+
+input.stars{
+  margin: 6px;;
+}
+
+
+/*imgalbum***/
+
+#imgalbum{
+  margin: auto;
+    display: block;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 4px 1px white;
+    }
+
+
+    
+
+
+
+    </style>
+    
+    
+    
+
+    <script>
+
+
+
+         function logout()
+        {
+            
+            localStorage.clear();
+            window.location.href = 'LoginSignup.html';
+        }
+    
+    
+    
+    </script>
+
+
+
+    
+    
+</head>
+<body style="font-family: oswald;background: #0665a2;color: white;transition: 1s;">
+	<div class="main ">
+        
+        
+        <!------------------Login/Signup------------------------------------------------------------------>
+        <div class="main-nav">
+          
+        <div id="logo"><a id="aa"  href="Profile.html">
+          
+          
+          <!-- <img src="Images/2.svg" width="60px" style="margin: 7px;margin-left: 30px;" > -->
+          <div width="60px" style="margin-left: 6px;
+          ">
+
+              <?xml version="1.0" encoding="utf-8"?>
+              <!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" style="
+                 margin-left: 6px;
+                 margin-top: 8px;
+             " fill="#ffffff">
+              <path  d="M361.1,298c-4.2,5-14,16.5-28.4,16.1c-0.8,0-1.7-0.1-2.5-0.2c-12.8-1.6-22.2-13-22.6-25.9
+                c-1.1-40-2.2-80-3.3-120c0-1.5-0.2-2.9-0.4-4.4c-9-47.7-49.9-83.4-98.5-85.6c-42.1-1.9-80.8,21.8-99,58.5c-4.9,9.9-7.4,20.8-8,31.8
+                l-6.6,115.8c-0.9,15.2-14.1,26.9-29.2,25.4c-8.5-0.8-17.7-3.6-25.2-10.3C21.1,285,22.5,262,23.6,242.4c0.8-12.9,1.6-27,11.1-38.3
+                c3.2-3.9,7.4-7.3,16.1-17.3c2.4-2.8,4.6-5.4,6.5-7.7c2.8-3.5,4.8-7.6,5.6-12C74.8,96.6,132.5,45.1,196.7,43
+                c56.2-1.9,108,34.6,129.8,82c7.2,15.7,10.1,31,11,44.3c0.5,7.9,4.2,15.4,10.6,20.1c3.9,2.8,7.9,6.4,11.8,11
+                C383,227.9,382.1,273.4,361.1,298z M199,152.2L199,152.2c-7.6,0-13.8,6.2-13.8,13.8v177.3c0,7.6,6.2,13.8,13.8,13.8h0
+                c7.6,0,13.8-6.2,13.8-13.8V166C212.8,158.4,206.5,152.2,199,152.2z M240.7,191.1L240.7,191.1c-7.6,0-13.8,6.2-13.8,13.8v99.4
+                c0,7.6,6.2,13.8,13.8,13.8h0c7.6,0,13.8-6.2,13.8-13.8v-99.4C254.5,197.3,248.3,191.1,240.7,191.1z M160,191.1L160,191.1
+                c-7.6,0-13.8,6.2-13.8,13.8v99.4c0,7.6,6.2,13.8,13.8,13.8h0c7.6,0,13.8-6.2,13.8-13.8v-99.4C173.8,197.3,167.6,191.1,160,191.1z
+                 M120.2,215.2c-7.6,0-13.8,6.2-13.8,13.8v51.2c0,7.6,6.2,13.8,13.8,13.8s13.8-6.2,13.8-13.8V229C134,221.4,127.8,215.2,120.2,215.2z
+                 M278.5,215.2c-7.6,0-13.8,6.2-13.8,13.8v51.2c0,7.6,6.2,13.8,13.8,13.8s13.8-6.2,13.8-13.8V229C292.2,221.4,286,215.2,278.5,215.2z
+                "/>
+              </svg>
+              
+
+          </div>
+        
+        
+        
+        </a></div>
+            
+        
+           
+             
+        <div>
+	       <ul> 
+               <li id="nam" class="lii" style="padding-right: 120px;padding-top: 3px;"><script>document.write(localStorage.getItem("username"))</script></li>
+               <li><b  href="#0" id="lout" onclick="logout()" >Logout</b></li>
+		       <!--li><a class="signup" href="#0">Sign up</a></li-->
+               
+                
+	       </ul>
+        </div>
+        </div>
+        
+     
+        
+        
+        <div id="op" style="position: absolute;top: 100px;left:10px;">
+        
+            <!-- <img src="Images/1.svg"  > -->
+
+          <div   id="myBtno"  style="width: 40px;height: 40px;cursor: pointer;">
+            <svg fill="#ffffff" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+         <path  d="M352.3,123.8H47.7c-13.6,0-24.8-11.1-24.8-24.8v0c0-13.6,11.1-24.8,24.8-24.8h304.6
+           c13.6,0,24.8,11.1,24.8,24.8v0C377.1,112.7,365.9,123.8,352.3,123.8z M377.1,200L377.1,200c0-13.6-11.1-24.8-24.8-24.8H47.7
+           c-13.6,0-24.8,11.1-24.8,24.8v0c0,13.6,11.1,24.8,24.8,24.8h304.6C365.9,224.8,377.1,213.6,377.1,200z M377.1,300.9L377.1,300.9
+           c0-13.6-11.1-24.8-24.8-24.8H47.7c-13.6,0-24.8,11.1-24.8,24.8v0c0,13.6,11.1,24.8,24.8,24.8h304.6
+           C365.9,325.7,377.1,314.6,377.1,300.9z"/>
+         </svg>
+
+        </div>
+
+
+
+
+        
+        </div>
+        
+        <!-- The Modal -->
+<div id="myModalo" class="modalo">
+
+    <!-- Modal content -->
+    <div class="modal-contento">
+      <span class="closeo">&times;</span>
+      <!-- <p>Some text in the Modal..</p> -->
+      
+
+      
+<div class="mtab">
+  <button class="mtablinks" onclick="openA(event, 'Aa')" id="defaultOpen">Search</button>
+  <button class="mtablinks" onclick="openA(event, 'Bb')">Song-list</button>
+  <button class="mtablinks" onclick="openA(event, 'Cc')">Recommeded</button>
+  <button class="mtablinks" onclick="openA(event, 'Dd')">Request songs</button>
+</div>
+
+<div id="Aa" class="mtabcontent">
+  <div class="example">
+    <form class="searchbox-container" >
+        <input type="search" class="searchbox" autocomplete="off" id="ser" />
+        <button type="button" class="searchbutton" onclick="Usearch()"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+  <div id="searchSongs">
+
+
+
+  </div>
+</div>
+
+<script>
+
+  function Usearch()
+  {
+    
+    var SerIN=document.getElementById('ser');
+    var key=SerIN.value;
+    if(key!="")
+    {
+
+
+      var Songs=document.getElementById('searchSongs');
+                
+            
+                var refItems = firebase.database().ref("Songs");
+ 
+ 
+                refItems.on("value",function(snapshot1)
+                    {
+                      //  console.log(snapshot1.val());
+                        //   console.log("Songs:"+ snapshot1.exists());
+                            Songs.innerHTML="";
+
+
+
+                           snapshot1.forEach(function(childSnapshot1)
+
+                             {
+
+                               var cc=childSnapshot1.val();
+
+
+                               var refch=firebase.database().ref("Users/Customers/"+localStorage.getItem('userid')+"/Songs");
+                               var hasName;
+                              // refch.on("value",)
+                                refch.once("value")
+                                  .then(function(snapshot) {
+                                    var hasName = snapshot.hasChild(childSnapshot1.val().key); // true
+                                    //var hasAge = snapshot.hasChild("age"); // false
+                                    console.log(hasName);
+
+                                    
+                                          if(!hasName)
+                                          {
+
+
+                                            if((cc.name.toUpperCase()).includes(key.toUpperCase()) || (cc.album.toUpperCase()).includes(key.toUpperCase())  || (cc.artist.toUpperCase()).includes(key.toUpperCase()) )
+                              {
+
+                                console.log(childSnapshot1.key);
+                                           var artist=  childSnapshot1.val().artist;
+                                           var  album=childSnapshot1.val().album;
+                                           var  dur=childSnapshot1.val().duration;
+                                         //  var   file=childSnapshot1.val().file;
+                                           var  image=childSnapshot1.val().image;
+                                           var  name=childSnapshot1.val().name;
+                                            
+                                           var div=document.createElement('div');
+                                           div.setAttribute('class','both');
+ 
+                                          var divleft=document.createElement('div');
+                                          divleft.setAttribute('class','left');
+                                          var divright=document.createElement('div');
+                                          divright.setAttribute('class','right');
+                                            
+                                          var Nartist=document.createElement('p');
+                                       
+                                          var Nalbum=document.createElement('p');
+                                          var Ndur=document.createElement('p');
+                                          //var Nfile=document.createElement('p');
+                                         
+                                          var Nimage=document.createElement('img');
+                                          Nimage.setAttribute('src', image);
+                                          var Nname=document.createElement('p');
+                                       
+
+                                          var bu=document.createElement('button');
+                                          bu.setAttribute('data',childSnapshot1.val().key);
+
+                                          bu.addEventListener('click',addSongToList);
+                                          bu.innerHTML="Add";
+                                          bu.setAttribute('class','addBu');
+                                          
+                                             //console.log("addd"+addressData);
+                                        /*   var br=document.createElement('br');
+                                           var brr=document.createElement('br');
+                                          var br1=document.createElement('br');
+                                          var br2=document.createElement('br');
+                                          var br3=document.createElement('br');
+                                          var br4=document.createElement('br');
+                                          var br5=document.createElement('br');*/
+                                         
+                                            
+                                             Nalbum.innerHTML="Album :"+album;
+                                             Nartist.innerHTML="Artist :"+artist;
+                                             Ndur.innerHTML="Duration :"+dur;
+                                             Nname.innerHTML="Name :"+name;
+                                            
+                                            divleft.appendChild(Nimage);
+ 
+                                            divright.appendChild(Nname);
+                                            divright.appendChild(Nalbum);
+                                            divright.appendChild(Nartist);
+                                            divright.appendChild(Ndur);
+
+                                            divright.appendChild(bu);
+ 
+                                          
+                                        div.appendChild(divleft);
+                                        div.appendChild(divright);
+ 
+                                         
+                                          
+                     
+                                          Songs.appendChild(div);
+ 
+
+                                
+
+
+
+
+                              }
+
+
+                                
+
+
+
+
+
+                                          }
+
+
+                                  });
+
+
+                               
+                       
+         
+                                        
+ 
+
+
+
+                                    
+                                  
+ 
+ 
+ 
+                                 
+ 
+
+
+                                  });
+
+
+ 
+ 
+                             
+                    } );
+
+
+    }
+    else
+    alert('n')
+
+  }
+
+
+</script>
+
+<div id="Bb" class="mtabcontent">
+  
+  
+  <div >
+    <!-- <p style="font-size: 25px;padding: 10px;color: #dd2600;">Songs</p> -->
+
+    <div id="Songs2">
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+<div id="Cc" class="mtabcontent">
+  <div id="Recommeded">
+
+
+  </div>
+</div>
+
+<div id="Dd" class="mtabcontent">
+  <div id="reqestSong">
+    <p  style="margin: 100px 10px 10px 0px;">Song name: </p>
+    <input type="text" id="reqIN" style="color: black;"><br><br><br>
+    <button id="reqBU" onclick="sendREQ()" style="color: black;margin-bottom: 78px;">Send</button>
+
+
+  </div>
+
+  <script>
+  
+    function sendREQ()
+    {
+      var s=document.getElementById('reqIN');
+      console.log(s.value);
+      if(!s.value=="")
+      {
+        var ref=firebase.database().ref("SongsRequests");
+       ref.push({
+            songName:s.value,
+            userid:localStorage.getItem('userid'),
+            username:localStorage.getItem('username')
+       })
+      }
+      
+    }
+  
+  </script>
+
+</div>
+
+<script>
+function openA(evt, Name) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("mtabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("mtablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(Name).style.display = "block";
+  evt.currentTarget.className += " active";
+
+
+    if(Name=="Bb")
+        fillSong();
+}
+
+
+function fillSong()
+    {
+      
+
+
+
+
+      console.log('bb');
+          
+      let Songs=document.getElementById('Songs2');
+                
+            
+                var refItems = firebase.database().ref("Songs");
+ 
+ 
+                refItems.on("value",function(snapshot1)
+                    {
+                        console.log(snapshot1.val());
+                           console.log("Songs:"+ snapshot1.exists());
+                            Songs.innerHTML="";
+
+
+
+                           snapshot1.forEach(function(childSnapshot1)
+                        
+                           
+ 
+                             {
+
+                              
+                            var refch=firebase.database().ref("Users/Customers/"+localStorage.getItem('userid')+"/Songs");
+                               var hasName;
+                              // refch.on("value",)
+                                refch.once("value")
+                                  .then(function(snapshot) {
+                                    var hasName = snapshot.hasChild(childSnapshot1.val().key); // true
+                                    //var hasAge = snapshot.hasChild("age"); // false
+                                    console.log(hasName);
+
+                                    
+                                  if(!hasName)
+                                  {
+
+                                    console.log(childSnapshot1.val());
+                                  
+                       
+         
+                                           console.log(childSnapshot1.key);
+                                           var artist=  childSnapshot1.val().artist;
+                                           var  album=childSnapshot1.val().album;
+                                           var  dur=childSnapshot1.val().duration;
+                                         //  var   file=childSnapshot1.val().file;
+                                           var  image=childSnapshot1.val().image;
+                                           var  name=childSnapshot1.val().name;
+                                            
+                                           var div=document.createElement('div');
+                                           div.setAttribute('class','both');
+ 
+                                          var divleft=document.createElement('div');
+                                          divleft.setAttribute('class','left');
+                                          var divright=document.createElement('div');
+                                          divright.setAttribute('class','right');
+                                            
+                                          var Nartist=document.createElement('p');
+                                       
+                                          var Nalbum=document.createElement('p');
+                                          var Ndur=document.createElement('p');
+                                          //var Nfile=document.createElement('p');
+                                         
+                                          var Nimage=document.createElement('img');
+                                          Nimage.setAttribute('src', image);
+                                          var Nname=document.createElement('p');
+                                       
+
+                                          var bu=document.createElement('button');
+                                          bu.setAttribute('data',childSnapshot1.val().key);
+
+                                          bu.addEventListener('click',addSongToList);
+                                          bu.innerHTML="Add";
+                                          bu.setAttribute('class','addBu');
+                                          
+                                             //console.log("addd"+addressData);
+                                        /*   var br=document.createElement('br');
+                                           var brr=document.createElement('br');
+                                          var br1=document.createElement('br');
+                                          var br2=document.createElement('br');
+                                          var br3=document.createElement('br');
+                                          var br4=document.createElement('br');
+                                          var br5=document.createElement('br');*/
+                                         
+                                            
+                                             Nalbum.innerHTML="Album :"+album;
+                                             Nartist.innerHTML="Artist :"+artist;
+                                             Ndur.innerHTML="Duration :"+dur;
+                                             Nname.innerHTML="Name :"+name;
+                                            
+                                            divleft.appendChild(Nimage);
+ 
+                                            divright.appendChild(Nname);
+                                            divright.appendChild(Nalbum);
+                                            divright.appendChild(Nartist);
+                                            divright.appendChild(Ndur);
+
+                                            divright.appendChild(bu);
+ 
+                                          
+                                        div.appendChild(divleft);
+                                        div.appendChild(divright);
+ 
+                                         
+                                          
+                     
+                                          Songs.appendChild(div);
+ 
+ 
+
+
+
+                                    
+                                  }
+ 
+ 
+ 
+                                 
+ 
+
+
+                                  });
+
+
+ 
+ 
+                             });
+                    }
+
+                    //
+ 
+                  );
+ 
+ 
+               
+    }
+
+
+    function addSongToList()
+    {
+      //console.log(this.getAttribute('data'));
+      var data=this.getAttribute('data');
+      var song=firebase.database().ref("Users/Customers/"+localStorage.getItem('userid')+"/Songs");
+      //console.log(song.hasChildren);
+
+      song.once("value")
+        .then(function(snapshot) {
+              var a = snapshot.hasChildren(); 
+            console.log(a);
+            if(a)
+            {
+              song.update({
+                 [data]:data
+           });
+            }
+            else{
+              song.set({
+                [data]:data
+               });
+            }
+
+      })
+      .then(function(s){
+    
+              var dset=firebase.database().ref("Dataset/"+localStorage.getItem('userid'));
+
+              console.log('hiii')
+              
+              
+              dset.once("value")
+                .then(function(snapshot){
+                              var a = snapshot.hasChildren(); 
+                        console.log(a);
+                        if(a)
+                        {
+                          dset.update({
+                            [data]:0
+                      });
+                        }
+                        else{
+                          dset.set({
+                            [data]:0
+                          });
+                        }
+
+
+                })
+                .then(function(s){
+              window.location.reload();
+               console.log('reload')
+            });
+      
+
+  
+
+  })
+ 
+    }
+
+
+
+
+
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+
+
+<script>
+
+
+  
+
+
+</script>
+
+
+
+
+    </div>
+  
+  </div>
+
+  <script>
+        
+    // Get the modal
+var modal = document.getElementById("myModalo");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtno");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closeo")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+modal.style.display = "block";
+recom();
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+}
+    
+    
+    </script>
+          
+        <!--div class="container" style="margin-top: 40px;">
+    <div class="column add-bottom">
+        <div id="mainwrap">
+            <div id="nowPlay">
+                <span id="npAction">Paused...</span><span id="npTitle"></span>
+            </div>
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio id="audio1" preload controls>Your browser does not support HTML5 Audio! 😢</audio>
+                </div>
+                <div id="tracks">
+                    <a id="btnPrev">&vltri;</a><a id="btnNext">&vrtri;</a>
+                </div>
+            </div>
+            <div id="plwrap">
+                <ul id="plList"></ul>
+            </div>
+        </div>
+    </div>
+   
+</div-->
+        
+      <br><br><br><br><br><br>  
+        
+    <div class="col-md-12 context" style="text-align: center;">
+      <p> Last Command: <span class="l-command"></span></p>
+      <p>Status: <span class="status"></span> </p>
+    </div>
+
+    <!--div class="col-md-5">
+      <p class="big text-center"><span class="glyphicon glyphicon-info-sign"></span> Available Commands:</p>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-success"><strong>Play</strong> - Plays the current song or starts the first song.</li>
+        <li class="list-group-item list-group-item-success"><strong>Stop</strong> - Stops the the current song and nullifies the playback time.</li>
+        <li class="list-group-item list-group-item-success"><strong>Pause</strong> - Pauses the current song.</li>
+        <li class="list-group-item list-group-item-success"><strong>Next</strong> Plays the next song in the list.</li>
+        <li class="list-group-item list-group-item-success"><strong>Previous</strong> - Plays the previous song in the list. </li>
+        <li class="list-group-item list-group-item-success"><strong>Play &lt;slice from song's or singer's name&gt;</strong> - Plays a song with a particular name, if found.</li>
+       
+      </ul>
+    </div-->
+
+    <div id="albumdp">
+      <img src="./multi.png" id="imgalbum" alt="album">
+  </div>
+
+  <br>
+    <div class="col-md-6" style="float: none;">
+      <p class="lead text-center" style="font-size: 25px;font-weight: normal">Songs</p>
+      <ul class="list-group" id="playlist"></ul>
+    </div>
+
+    <div id="spinner">
+      <img src="http://upload.wikimedia.org/wikipedia/commons/d/de/Ajax-loader.gif" alt="Loading">
+    </div>
+
+        
+        
+        
+        
+        
+    </div>
+  
+ 
+    
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
